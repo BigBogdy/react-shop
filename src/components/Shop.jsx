@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import { API_KEY, API_URL } from '../config';
+import { API_KEY, API_URL } from '../config';
 import { Preloader } from './Preloader';
 import { GoodsList } from './GoodsList';
 import { Cart } from './Cart';
@@ -78,9 +78,9 @@ function Shop() {
   };
 
   useEffect(function getGoods() {
-    fetch('https://fortniteapi.io/v1/shop?lang=en', {
+    fetch(API_URL, {
       headers: {
-        Authorization: 'b1036bbb-be62e965-f85a8fe6-9d3c4535',
+        Authorization: API_KEY,
       },
     })
       .then((response) => response.json())
